@@ -1,0 +1,62 @@
+.AnnouncementBar {
+  color: #FFFFFF;
+  background-color: #375437;
+  min-height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .title {
+    font-size: 0.8125rem;
+    color: #FFFFFF;
+  }
+
+}
+
+.AnnouncementTicker {
+  /* outline: 1px solid red; */
+  overflow: hidden;
+
+  .text {
+    /* outline: 1px solid red; */
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color:  white;
+    animation-duration: 0.5s;
+
+    &.slideIn {
+      animation-name: slideIn;
+    }
+
+    &.slideOut {
+      animation-name: slideOut;
+      animation-fill-mode: forwards /* Keep the position */
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(calc(1em + 0.6154em)); /* Number of pixels to move the text below its parent.  */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0); 
+  }
+  100% {
+    transform: translateY(calc((1em + 0.6154em) * -1)); /* Number of pixels to move the text above its parent. */
+  }
+}
