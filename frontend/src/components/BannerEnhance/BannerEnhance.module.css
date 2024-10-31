@@ -22,11 +22,14 @@
 }
 
 .AnnouncementTicker {
-  height: 20px;
+  --announcementFontSize: 0.8125rem;
+  --announcementDisplayHeight: calc(var(--announcementFontSize) + 0.4375rem);
+
+  height: var(--announcementDisplayHeight);
   overflow: hidden;
 
   .announcement {
-    font-size: 0.8125rem; /* 13px */
+    font-size: var(--announcementFontSize);
     font-weight: 600;
     color: #FFFFFF;
     text-align: center;
@@ -35,7 +38,7 @@
     &.first {
       color: inherit;
       position: relative;
-      top: 20px;
+      top: var(--announcementDisplayHeight);
     }
 
     &.second {
@@ -58,15 +61,15 @@
     transform: translateY(0); /* Number of pixels to move the text below its parent.  */
   }
   100% {
-    transform: translateY(calc(20px * -1));
+    transform: translateY(calc(var(--announcementDisplayHeight) * -1));
   }
 }
 
 @keyframes slideOut {
   0% {
-    transform: translateY(calc(20px * -1));
+    transform: translateY(calc(var(--announcementDisplayHeight) * -1));
   }
   100% {
-    transform: translateY(calc(40px * -1));  
+    transform: translateY(calc((var(--announcementDisplayHeight) * 2) * -1));  
   }
 }
