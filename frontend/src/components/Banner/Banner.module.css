@@ -1,4 +1,4 @@
-.AnnouncementBar {
+.Banner {
   color: #FFFFFF;
   background-color: #375437;
   min-height: 54px;
@@ -21,42 +21,55 @@
 
 }
 
-.AnnouncementTicker {
-  /* outline: 1px solid red; */
+.AnnouncementCarousel {
+  --announcementFontSize: 0.8125rem;
+  --announcementDisplayHeight: calc(var(--announcementFontSize) + 0.4375rem);
+
+  height: var(--announcementDisplayHeight);
   overflow: hidden;
 
-  .text {
-    /* outline: 1px solid red; */
-    font-size: 0.8125rem;
+  .announcement {
+    font-size: var(--announcementFontSize);
     font-weight: 600;
-    color:  white;
-    animation-duration: 0.5s;
+    color: #FFFFFF;
+    text-align: center;
+    animation-duration: 1s;
+
+    &.first {
+      color: inherit;
+      position: relative;
+      top: var(--announcementDisplayHeight);
+    }
+
+    &.second {
+      color: inherit;
+    }
 
     &.slideIn {
       animation-name: slideIn;
+      animation-fill-mode: forwards;
     }
 
     &.slideOut {
       animation-name: slideOut;
-      animation-fill-mode: forwards /* Keep the position */
     }
   }
 }
 
 @keyframes slideIn {
   0% {
-    transform: translateY(calc(1em + 0.6154em)); /* Number of pixels to move the text below its parent.  */
+    transform: translateY(0); /* Number of pixels to move the text below its parent.  */
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(calc(var(--announcementDisplayHeight) * -1));
   }
 }
 
 @keyframes slideOut {
   0% {
-    transform: translateY(0); 
+    transform: translateY(calc(var(--announcementDisplayHeight) * -1));
   }
   100% {
-    transform: translateY(calc((1em + 0.6154em) * -1)); /* Number of pixels to move the text above its parent. */
+    transform: translateY(calc((var(--announcementDisplayHeight) * 2) * -1));  
   }
 }
