@@ -15,7 +15,7 @@ interface AnnouncementCarouselProps {
 // Main Component
 export default function Banner({ announcements }: BannerProps) {
   return (
-    <div className={styles.Banner}>
+    <div className={styles.banner}>
       <div className={styles.container}>
         <div className={styles.title}>Bring Nature Indoors</div>
         <AnnouncementCarousel announcements={announcements}/>
@@ -59,7 +59,7 @@ function AnnouncementCarousel({ announcements, displayInterval = 2500 }: Announc
   }, [displayInterval]);
 
   return (
-    <div className={styles.AnnouncementCarousel}>
+    <div className={styles.announcementCarousel}>
 
       {/* First Announcement */}
       <div 

@@ -1,4 +1,4 @@
-.Banner {
+.banner {
   color: #FFFFFF;
   background-color: #375437;
   min-height: 54px;
@@ -21,7 +21,7 @@
 
 }
 
-.AnnouncementCarousel {
+.announcementCarousel {
   --announcementFontSize: 0.8125rem;
   --announcementDisplayHeight: calc(var(--announcementFontSize) + 0.4375rem);
 
